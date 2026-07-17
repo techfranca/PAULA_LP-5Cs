@@ -4,1707 +4,417 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Os 5 Conteúdos que Conquistam Clientes | Paula Zagotta</title>
+<meta name="description" content="Masterclass do Framework dos 5 C's: os cinco tipos de conteúdo que conquistam clientes toda semana nas redes. Para prestadores de serviço que postam, mas não convertem." />
+
+<!-- Favicon (identidade dourada) -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Os 5 Conteúdos que Conquistam Clientes | Paula Zagotta" />
+<meta property="og:description" content="A masterclass do Framework dos 5 C's para prestadores de serviço que criam conteúdo mas não convertem." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Fontes (carregadas uma vez só) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
-<style>/* ============================================================
-   PAULA MODERN CSS — Dark Mode Premium Landing Page
-   Design Reference: Linear.app / Vercel / Stripe
-   ============================================================ */
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-/* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
-
-/* --- CSS Custom Properties --- */
-:root {
-  --bg:           #09090b;
-  --surface:      #111113;
-  --surface2:     #18181b;
-  --surface3:     #1e1e23;
-  --accent:       #e8a44a;
-  --accent-light: #f0c878;
-  --accent-dim:   rgba(232,164,74,0.15);
-  --accent-glow:  rgba(232,164,74,0.25);
-  --green:        #22c55e;
-  --green-dim:    rgba(34,197,94,0.12);
-  --muted:        #71717a;
-  --muted-light:  #a1a1aa;
-  --text:         #fafafa;
-  --text-secondary: #d4d4d8;
-  --border:       rgba(255,255,255,0.06);
-  --border-hover: rgba(255,255,255,0.12);
-  --font-sans:    'Inter', sans-serif;
-  --font-serif:   'Playfair Display', serif;
-  --radius-sm:    8px;
-  --radius-md:    12px;
-  --radius-lg:    20px;
-  --radius-xl:    28px;
-  --transition:   0.25s cubic-bezier(0.4,0,0.2,1);
-}
-
-/* --- Reset & Base --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: var(--font-sans);
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  font-size: 16px;
-  min-height: 100vh;
-  overflow-x: hidden;
-  /* Noise texture via SVG data URI */
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(232,164,74,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(232,164,74,0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(17,17,19,0.8) 0%, var(--bg) 100%);
-}
-
-/* --- Keyframes --- */
-@keyframes gradient-shift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes border-spin {
-  to { --angle: 360deg; }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px var(--accent-glow), 0 4px 24px rgba(0,0,0,0.4); }
-  50%       { box-shadow: 0 0 35px rgba(232,164,74,0.4), 0 4px 32px rgba(0,0,0,0.5); }
-}
-
-@keyframes badge-border {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
-}
-
-/* --- Topbar --- */
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  background: rgba(9,9,11,0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  letter-spacing: 0.01em;
-  gap: 8px;
-}
-
-.topbar strong {
-  color: var(--accent);
-}
-
-/* --- Layout --- */
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.container-sm {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section {
-  padding: 96px 0;
-  position: relative;
-}
-
-.divider {
-  height: 1px;
-  border: none;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border-hover) 20%,
-    rgba(232,164,74,0.2) 50%,
-    var(--border-hover) 80%,
-    transparent 100%
-  );
-  margin: 0;
-}
-
-/* --- Section Labels --- */
-.section-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-  opacity: 0.9;
-}
-
-.section-title {
-  font-size: clamp(28px, 5vw, 44px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--text) 40%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-}
-
-.section-body {
-  font-size: 17px;
-  line-height: 1.75;
-  color: var(--text-secondary);
-  max-width: 600px;
-}
-
-/* --- Hero --- */
-.hero {
-  position: relative;
-  padding: 100px 0 80px;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(232,164,74,0.1) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(232,164,74,0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(232,164,74,0.06) 0%, transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted-light);
-  margin-bottom: 20px;
-  animation: fade-up 0.6s ease both;
-}
-
-/* --- Badge --- */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent);
-  position: relative;
-  margin-bottom: 24px;
-  animation: fade-up 0.5s ease both;
-  /* Animated gradient border */
-  background:
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent), var(--accent-light)) border-box;
-  border: 1.5px solid transparent;
-  background-size: 200% auto;
-  animation: fade-up 0.5s ease both, badge-border 3s linear infinite;
-}
-
-/* --- Hero Headline --- */
-.hero h1 {
-  font-size: clamp(36px, 6vw, 72px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-  color: var(--text);
-  margin-bottom: 24px;
-  animation: fade-up 0.7s ease 0.1s both;
-}
-
-.hero h1 span {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 60%, #ffd89b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-style: italic;
-  font-family: var(--font-serif);
-}
-
-.hero-sub {
-  font-size: clamp(16px, 2.5vw, 20px);
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 560px;
-  margin: 0 auto 40px;
-  animation: fade-up 0.7s ease 0.2s both;
-}
-
-/* --- CTA Button --- */
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 36px;
-  border-radius: var(--radius-lg);
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #0a0806;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
-  background-size: 200% 200%;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 24px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.4);
-  animation: fade-up 0.7s ease 0.3s both, pulse-glow 2.5s ease-in-out 1s infinite;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.cta-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.cta-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 0 40px rgba(232,164,74,0.45), 0 8px 32px rgba(0,0,0,0.5);
-  animation: gradient-shift 2s ease infinite, none;
-  background-size: 200% 200%;
-}
-
-/* --- Hero Price --- */
-.hero-price {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 28px;
-  animation: fade-up 0.7s ease 0.4s both;
-}
-
-.price-from {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: line-through;
-}
-
-.price-now {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--accent);
-  letter-spacing: -0.02em;
-}
-
-/* --- Hero Meta --- */
-.hero-meta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  margin-top: 32px;
-  flex-wrap: wrap;
-  animation: fade-up 0.7s ease 0.5s both;
-}
-
-.hero-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--muted-light);
-  padding: 0 20px;
-  border-right: 1px solid var(--border);
-}
-
-.hero-meta-item:last-child {
-  border-right: none;
-}
-
-.hero-meta-item svg,
-.hero-meta-item span:first-child {
-  color: var(--green);
-  font-size: 14px;
-}
-
-/* --- Problema Section --- */
-.problema {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-/* --- Pain Grid --- */
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-  margin-top: 48px;
-}
-
-.pain-card {
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.pain-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(232,164,74,0.04) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.pain-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(232,164,74,0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(232,164,74,0.1);
-}
-
-.pain-card:hover::before {
-  opacity: 1;
-}
-
-.pain-emoji {
-  font-size: 24px;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.pain-text {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-secondary);
-}
-
-.pain-text strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-
-/* --- Big Idea --- */
-.big-idea {
-  position: relative;
-  text-align: center;
-  padding: 100px 0;
-}
-
-.big-idea::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(232,164,74,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.idea-block {
-  background: rgba(255,255,255,0.025);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232,164,74,0.15);
-  border-radius: var(--radius-xl);
-  padding: 56px 48px;
-  position: relative;
-  box-shadow: 0 0 80px rgba(232,164,74,0.05), inset 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.idea-block::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 20%;
-  right: 20%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-}
-
-.idea-block p {
-  font-size: clamp(20px, 3vw, 30px);
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--text);
-  margin-bottom: 16px;
-}
-
-.idea-block em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--accent);
-  font-size: 1.05em;
-}
-
-/* --- Método / Framework --- */
-.metodo {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.cs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 48px;
-}
-
-.c-card {
-  position: relative;
-  background: rgba(255,255,255,0.025);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 24px 24px;
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-/* Top gradient border per card — cycling accent colors */
-.c-card:nth-child(1)::before { background: linear-gradient(90deg, var(--accent), #fbbf24); }
-.c-card:nth-child(2)::before { background: linear-gradient(90deg, #f0c878, var(--accent)); }
-.c-card:nth-child(3)::before { background: linear-gradient(90deg, var(--accent), #fb923c); }
-.c-card:nth-child(4)::before { background: linear-gradient(90deg, #fcd34d, var(--accent-light)); }
-.c-card:nth-child(5)::before { background: linear-gradient(90deg, var(--accent-light), #e8a44a); }
-.c-card:nth-child(6)::before { background: linear-gradient(90deg, var(--accent), #fbbf24); }
-
-.c-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-}
-
-.c-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(232,164,74,0.25);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(232,164,74,0.08), 0 0 32px rgba(232,164,74,0.08);
-}
-
-.c-number {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.c-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.c-desc {
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--muted-light);
-}
-
-.c-corner {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  font-size: 28px;
-  opacity: 0.12;
-  transition: opacity var(--transition), transform var(--transition);
-  pointer-events: none;
-}
-
-.c-card:hover .c-corner {
-  opacity: 0.22;
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* --- Autoridade --- */
-.autoridade {
-  padding: 80px 0;
-}
-
-.autor-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  background: rgba(255,255,255,0.025);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 48px;
-  position: relative;
-  overflow: hidden;
-}
-
-.autor-box::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 10%;
-  right: 60%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232,164,74,0.4), transparent);
-}
-
-.autor-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 2px solid rgba(232,164,74,0.3);
-  box-shadow: 0 0 32px rgba(232,164,74,0.15);
-  flex-shrink: 0;
-  object-fit: cover;
-  background: var(--surface2);
-  overflow: hidden;
-}
-
-.autor-content h3 {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
-}
-
-.autor-label {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.autor-content p {
-  font-size: 15px;
-  line-height: 1.75;
-  color: var(--text-secondary);
-}
-
-/* --- Conteúdo / Entregáveis --- */
-.conteudo {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.entregavel-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 48px;
-}
-
-.entregavel-card {
-  background: rgba(255,255,255,0.025);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 24px;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.entregavel-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232,164,74,0.2), transparent);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.entregavel-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(232,164,74,0.2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 24px rgba(232,164,74,0.06);
-}
-
-.entregavel-card:hover::after {
-  opacity: 1;
-}
-
-.entregavel-icon {
-  font-size: 28px;
-  margin-bottom: 16px;
-  display: block;
-  animation: float 3s ease-in-out infinite;
-}
-
-.entregavel-card h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.entregavel-card p {
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--muted-light);
-  margin-bottom: 16px;
-}
-
-.entregavel-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(232,164,74,0.2);
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* --- Prova Social --- */
-.prova {
-  padding: 80px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  margin-top: 48px;
-  margin-bottom: 60px;
-}
-
-.stat-card {
-  background: rgba(255,255,255,0.025);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 32px 24px;
-  text-align: center;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-  position: relative;
-}
-
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 30%;
-  right: 30%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.4;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(232,164,74,0.2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-
-.stat-number {
-  font-size: clamp(28px, 5vw, 44px);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1.1;
-  margin-bottom: 6px;
-}
-
-.stat-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  display: block;
-  margin-bottom: 4px;
-}
-
-.stat-source {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.03em;
-}
-
-.depo-placeholder {
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed var(--border-hover);
-  border-radius: var(--radius-md);
-  padding: 48px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: 16px;
-}
-
-/* --- Para Quem --- */
-.paraquem {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.check-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 12px;
-  margin-top: 40px;
-}
-
-.check-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 20px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  transition: background var(--transition), border-color var(--transition);
-}
-
-.check-list li:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(34,197,94,0.2);
-}
-
-.check-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--green-dim);
-  border: 1.5px solid rgba(34,197,94,0.35);
-  color: var(--green);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 1px;
-  line-height: 1;
-}
-
-/* --- Oferta --- */
-.oferta {
-  padding: 100px 0;
-  position: relative;
-}
-
-.oferta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(232,164,74,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-/* Rotating border container trick */
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.oferta-box {
-  max-width: 560px;
-  margin: 0 auto;
-  background: var(--surface);
-  border-radius: var(--radius-xl);
-  padding: 48px;
-  text-align: center;
-  position: relative;
-  /* Animated conic gradient border */
-  border: 1px solid transparent;
-  background-clip: padding-box;
-  box-shadow:
-    0 0 0 1px rgba(232,164,74,0.25),
-    0 0 80px rgba(232,164,74,0.12),
-    0 32px 80px rgba(0,0,0,0.4),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-  animation: border-spin 4s linear infinite;
-}
-
-.oferta-box::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--angle, 0deg),
-    var(--accent) 0%,
-    var(--accent-light) 15%,
-    transparent 30%,
-    transparent 70%,
-    var(--accent) 85%,
-    var(--accent) 100%
-  );
-  z-index: -1;
-  animation: border-spin 4s linear infinite;
-}
-
-.oferta-box::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--surface);
-  z-index: -1;
-}
-
-.oferta-box h3 {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-}
-
-.value-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 32px;
-  text-align: left;
-}
-
-.value-table td {
-  padding: 10px 0;
-  font-size: 14px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-secondary);
-}
-
-.value-table td:last-child {
-  text-align: right;
-  color: var(--muted);
-  text-decoration: line-through;
-}
-
-.oferta-price-block {
-  margin-bottom: 28px;
-}
-
-.oferta-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.oferta-price {
-  font-size: clamp(36px, 7vw, 56px);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  line-height: 1.1;
-}
-
-.oferta-installment {
-  display: block;
-  font-size: 14px;
-  color: var(--muted-light);
-  margin-top: 6px;
-}
-
-.oferta-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 18px 40px;
-  border-radius: var(--radius-lg);
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #0a0806;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
-  background-size: 200% 200%;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 32px var(--accent-glow), 0 4px 24px rgba(0,0,0,0.4);
-  transition: transform var(--transition), box-shadow var(--transition);
-  animation: pulse-glow 2.5s ease-in-out infinite, gradient-shift 3s ease infinite;
-}
-
-.oferta-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.oferta-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(232,164,74,0.5), 0 8px 36px rgba(0,0,0,0.5);
-}
-
-/* --- Garantia --- */
-.garantia-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: var(--green-dim);
-  border: 1px solid rgba(34,197,94,0.2);
-  border-radius: var(--radius-md);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--green);
-}
-
-/* --- FAQ --- */
-.faq {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.faq-list {
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.faq-item {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: rgba(255,255,255,0.02);
-  transition: border-color var(--transition), background var(--transition);
-}
-
-.faq-item:hover {
-  border-color: var(--border-hover);
-  background: rgba(255,255,255,0.035);
-}
-
-.faq-item.open {
-  border-color: rgba(232,164,74,0.2);
-  background: rgba(255,255,255,0.03);
-}
-
-.faq-question {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  gap: 16px;
-  user-select: none;
-  list-style: none;
-}
-
-.faq-question::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--muted-light);
-  flex-shrink: 0;
-  transition: background var(--transition), color var(--transition), transform var(--transition);
-  line-height: 1;
-}
-
-.faq-item.open .faq-icon {
-  background: var(--accent-dim);
-  color: var(--accent);
-  border-color: rgba(232,164,74,0.25);
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
-}
-
-.faq-item.open .faq-answer {
-  max-height: 400px;
-}
-
-.faq-answer-inner {
-  padding: 0 24px 20px;
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--text-secondary);
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-}
-
-/* --- Final CTA --- */
-.final-cta {
-  padding: 100px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.final-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,164,74,0.09) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 50% 0%, rgba(232,164,74,0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.final-cta h2 {
-  font-size: clamp(28px, 5vw, 52px);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--text);
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
-.final-cta h2 em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--accent);
-  font-size: 1.05em;
-}
-
-/* --- Trust Signals --- */
-.trust-signals {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 36px;
-  flex-wrap: wrap;
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-}
-
-.trust-item svg,
-.trust-item span:first-child {
-  color: var(--muted-light);
-  font-size: 14px;
-}
-
-/* --- Footer --- */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.8;
-  background: var(--surface);
-}
-
-footer a {
-  color: var(--muted-light);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-footer a:hover {
-  color: var(--accent);
-}
-
-/* ============================================================
-   RESPONSIVE — Mobile (≤ 640px)
-   ============================================================ */
-@media (max-width: 640px) {
-  .section { padding: 64px 0; }
-
-  .hero { padding: 72px 0 60px; }
-  .hero h1 { font-size: 36px; letter-spacing: -0.025em; }
-  .hero-sub { font-size: 16px; }
-
-  .hero-meta { gap: 0; }
-  .hero-meta-item { font-size: 11px; padding: 0 12px; }
-
-  .container, .container-sm { padding: 0 16px; }
-
-  .pain-grid { grid-template-columns: 1fr; }
-  .cs-grid   { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .entregavel-grid { grid-template-columns: 1fr; }
-  .check-list { grid-template-columns: 1fr; }
-
-  .autor-box {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 32px 24px;
-  }
-
-  .autor-avatar { width: 96px; height: 96px; }
-
-  .idea-block { padding: 36px 24px; }
-
-  .oferta-box { padding: 36px 24px; }
-
-  .cta-btn, .oferta-cta {
-    width: 100%;
-    font-size: 15px;
-    padding: 16px 28px;
-  }
-
-  .section-title { font-size: 26px; }
-  .final-cta h2 { font-size: 28px; }
-
-  .trust-signals { gap: 16px; }
-  .trust-item { font-size: 11px; }
-}
-
-/* ============================================================
-   SCROLL-TRIGGERED FADE (CSS-only with animation-timeline)
-   Falls back gracefully in unsupported browsers
-   ============================================================ */
-@supports (animation-timeline: scroll()) {
-  .pain-card,
-  .c-card,
-  .entregavel-card,
-  .stat-card,
-  .check-list li {
-    animation: fade-up 0.5s ease both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 20%;
-  }
-}
-</style>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/creative.css" />
 </head>
 <body>
-<div class="topbar">Masterclass &middot; Acesso Imediato &middot; Pagamento &Uacute;nico</div>
-<section class="hero">
-<div class="badge">Framework dos 5 C's &mdash; Paula Zagotta</div>
-<span class="hero-eyebrow">Antes de pedir pro GPT...</span>
-<h1>Os 5 conteúdos que <span>conquistam clientes</span> toda semana nas redes.</h1>
-<p class="hero-sub">Uma masterclass de 1h para prestadores de serviço que criam conteúdo mas não convertem. Chega de postar sem retorno.</p>
-<a href="TODO-LINK-CHECKOUT" class="cta-btn" data-checkout="true" target="_blank" rel="noopener">
-Quero meu acesso agora &rarr;
-</a>
-<div class="hero-price">
-<span class="price-from">De R$&nbsp;97</span>
-<span class="price-now">R$&nbsp;47</span>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker">
+  <span>Masterclass</span><span class="dot">·</span>
+  <span>Acesso imediato</span><span class="dot">·</span>
+  <b>Pagamento único</b>
 </div>
-<div class="hero-meta">
-<div class="hero-meta-item">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-Acesso imediato
-</div>
-<div class="hero-meta-item">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-7 dias de garantia
-</div>
-<div class="hero-meta-item">
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-Pagamento único
-</div>
-</div>
-</section>
-<hr class="divider" />
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <!-- Camadas de fundo (decorativas): brilho âmbar que deriva + numeral "5" da "edição" -->
+  <div class="hero__glow" aria-hidden="true"></div>
+  <span class="hero__numeral" aria-hidden="true">5</span>
+
+  <div class="wrap hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-load="1"><span class="tick"></span>Framework dos 5 C's · Masterclass</p>
+
+      <h1 data-load="2">Os 5 conteúdos que <span class="mark">conquistam clientes<svg class="mark__line" viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 140 2, 190 7 S 285 13, 317 5"/></svg></span> toda semana nas redes.</h1>
+
+      <p class="hero__sub" data-load="3">Uma masterclass de 1 hora para prestadores de serviço que criam conteúdo, mas não convertem. Chega de postar sem retorno.</p>
+
+      <!-- Índice dos 5 C's: teaser do método com os verbos que cada C cumpre -->
+      <ul class="hero__cs" data-load="4" aria-label="Os cinco tipos de conteúdo do framework">
+        <li><b>C1</b> Atrai</li>
+        <li><b>C2</b> Conecta</li>
+        <li><b>C3</b> Posiciona</li>
+        <li><b>C4</b> Convence</li>
+        <li><b>C5</b> Converte</li>
+      </ul>
+
+      <div class="hero__actions" data-load="5">
+        <a href="TODO-LINK-CHECKOUT" class="btn" data-checkout="true" target="_blank" rel="noopener">
+          Quero meu acesso agora <span class="arrow">&rarr;</span>
+        </a>
+        <!-- Par de preço: âncora vermelha riscada + final verde -->
+        <div class="price-row">
+          <span class="price-old">De R$&nbsp;97</span>
+          <span class="price-now">R$&nbsp;47</span>
+        </div>
+      </div>
+
+      <div class="hero__meta" data-load="6">
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Acesso imediato
+        </span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          7 dias de garantia
+        </span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Pagamento único
+        </span>
+      </div>
+    </div>
+
+    <div class="hero__visual" data-load="3">
+      <div class="hero__portrait">
+        <img
+          src="assets/paula-zagotta-960.jpg"
+          srcset="assets/paula-zagotta-960.jpg 960w, assets/paula-zagotta-1600.jpg 1600w"
+          sizes="(min-width: 960px) 42vw, 90vw"
+          width="960"
+          height="1440"
+          alt="Paula Zagotta"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="rule" />
+
+<!-- ============ PROBLEMA (dor) ============ -->
 <section class="section problema">
-<div class="container">
-<span class="section-eyebrow">Isso te parece familiar?</span>
-<h2 class="section-title">Você posta todo dia e ainda pergunta por que não vem cliente.</h2>
-<p class="section-body">Não é falta de esforço. Não é falta de conteúdo. É falta de estratégia.</p>
-<div class="pain-grid">
-<div class="pain-card">
-<span class="pain-emoji">😮‍💨</span>
-<div class="pain-text">
-<strong>Você já tentou de tudo</strong>
-Contratar social media, comprar curso, usar o ChatGPT. O feed ficou bonito. Os clientes não apareceram.
-</div>
-</div>
-<div class="pain-card">
-<span class="pain-emoji">😤</span>
-<div class="pain-text">
-<strong>Concorrentes menos qualificados vendem mais</strong>
-Você tem certificação, experiência e resultado. Eles têm método de conteúdo. E isso faz toda a diferença.
-</div>
-</div>
-<div class="pain-card">
-<span class="pain-emoji">📉</span>
-<div class="pain-text">
-<strong>Curtidas não pagam boleto</strong>
-Engajamento no Instagram, zero consultas no DM. Você sabe que faz um bom trabalho — só não sabe como comunicar isso de forma que venda.
-</div>
-</div>
-<div class="pain-card">
-<span class="pain-emoji">😩</span>
-<div class="pain-text">
-<strong>Todo dia é uma tentativa nova</strong>
-Sem estrutura, sem ritmo. Você posta quando dá, sobre o que aparece — e depois fica na dúvida se aquilo adiantou alguma coisa.
-</div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <span class="kicker reveal">Isso te parece familiar?</span>
+    <h2 class="title reveal">Você posta todo dia e ainda pergunta por que não vem cliente.</h2>
+    <p class="lead reveal">Não é falta de esforço. Não é falta de conteúdo. É falta de estratégia.</p>
+
+    <div class="pain-grid reveal">
+      <article class="pain-item">
+        <span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+        <div class="pain-txt"><h3>Você já tentou de tudo</h3><p>Contratar social media, comprar curso, usar o ChatGPT. O feed ficou bonito. Os clientes não apareceram.</p></div>
+      </article>
+      <article class="pain-item">
+        <span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+        <div class="pain-txt"><h3>Concorrentes menos qualificados vendem mais</h3><p>Você tem certificação, experiência e resultado. Eles têm método de conteúdo. E isso faz toda a diferença.</p></div>
+      </article>
+      <article class="pain-item">
+        <span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+        <div class="pain-txt"><h3>Curtidas não pagam boleto</h3><p>Engajamento no Instagram, zero consultas no DM. Você sabe que faz um bom trabalho, só não sabe como comunicar isso de forma que venda.</p></div>
+      </article>
+      <article class="pain-item">
+        <span class="pain-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></span>
+        <div class="pain-txt"><h3>Todo dia é uma tentativa nova</h3><p>Sem estrutura, sem ritmo. Você posta quando dá, sobre o que aparece, e depois fica na dúvida se aquilo adiantou alguma coisa.</p></div>
+      </article>
+    </div>
+  </div>
 </section>
-<section class="section big-idea">
-<div class="container-sm">
-<span class="section-eyebrow">A virada</span>
-<h2 class="section-title">O problema não é você. É o que você posta.</h2>
-<div class="idea-block">
-<p>A IA tornou criar conteúdo fácil demais. Agora qualquer um gera 30 posts em 10 minutos. O volume nunca foi o problema.</p>
-<p>O diferencial está na estratégia por trás de cada conteúdo. Saber <em>qual tipo de post</em> cria conexão, qual gera autoridade, qual move o seguidor para a compra &mdash; isso a IA não decide por você.</p>
-<p>A IA faz o trabalho duro. <em>Você faz o trabalho inteligente.</em> E é exatamente esse trabalho inteligente que você vai aprender aqui.</p>
-</div>
-</div>
+
+<!-- ============ VIRADA (big idea) ============ -->
+<section class="section virada">
+  <div class="wrap wrap--narrow">
+    <span class="kicker reveal" style="justify-content:center;">A virada</span>
+    <h2 class="title reveal">O problema não é você. É o que você posta.</h2>
+    <div class="virada__block reveal">
+      <p>A IA tornou criar conteúdo fácil demais. Agora qualquer um gera 30 posts em 10 minutos. O volume nunca foi o problema.</p>
+      <p>O diferencial está na estratégia por trás de cada conteúdo. Saber <em>qual tipo de post</em> cria conexão, qual gera autoridade, qual move o seguidor para a compra: isso a IA não decide por você.</p>
+      <p>A IA faz o trabalho duro. <em>Você faz o trabalho inteligente.</em> E é exatamente esse trabalho inteligente que você vai aprender aqui.</p>
+    </div>
+  </div>
 </section>
-<hr class="divider" />
+
+<hr class="rule" />
+
+<!-- ============ MÉTODO — OS 5 C'S ============ -->
 <section class="section metodo">
-<div class="container">
-<span class="section-eyebrow">O Framework dos 5 C's</span>
-<h2 class="section-title">Cinco tipos de conteúdo. Uma semana completa. Resultado toda semana.</h2>
-<p class="section-body">Cada "C" tem uma função específica na jornada do seu cliente. Juntos, eles constroem autoridade, criam conexão e geram venda &mdash; sem precisar virar refém do algoritmo.</p>
-<div class="cs-grid">
-<div class="c-card">
-<span class="c-number">C1 &mdash; Primeiro Conteúdo</span>
-<div class="c-title">O que abre portas</div>
-<p class="c-desc">O post que faz o cliente certo parar no seu perfil e pensar: "essa pessoa fala pra mim." Atrai sem forçar.</p>
-<span class="c-corner">01</span>
-</div>
-<div class="c-card">
-<span class="c-number">C2 &mdash; Segundo Conteúdo</span>
-<div class="c-title">O que gera conexão</div>
-<p class="c-desc">Cria proximidade real. A pessoa para de te ver como fornecedor e começa a te ver como referência de confiança.</p>
-<span class="c-corner">02</span>
-</div>
-<div class="c-card">
-<span class="c-number">C3 &mdash; Terceiro Conteúdo</span>
-<div class="c-title">O que constrói autoridade</div>
-<p class="c-desc">Mostra que você sabe o que faz &mdash; sem textão técnico que cansa. Posiciona sem precisar listar currículo.</p>
-<span class="c-corner">03</span>
-</div>
-<div class="c-card">
-<span class="c-number">C4 &mdash; Quarto Conteúdo</span>
-<div class="c-title">O que quebra objeções</div>
-<p class="c-desc">Antecipa o "mas..." da cabeça do seu cliente antes que ele te mande no privado perguntando. Diminui fricção, aumenta conversão.</p>
-<span class="c-corner">04</span>
-</div>
-<div class="c-card">
-<span class="c-number">C5 &mdash; Quinto Conteúdo</span>
-<div class="c-title">O que convida à ação</div>
-<p class="c-desc">O post que move. Não é "me chame no DM" no final de legenda. É estrutura que guia o cliente naturalmente até o próximo passo.</p>
-<span class="c-corner">05</span>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <span class="kicker reveal">O Framework dos 5 C's</span>
+    <h2 class="title reveal">Cinco tipos de conteúdo. Uma semana completa. Resultado toda semana.</h2>
+    <p class="lead reveal">Cada "C" tem uma função específica na jornada do seu cliente. Juntos, eles constroem autoridade, criam conexão e geram venda, sem precisar virar refém do algoritmo.</p>
+
+    <div class="cs-list">
+      <div class="c-row reveal">
+        <span class="c-num">01</span>
+        <div class="c-body">
+          <span class="c-tag">Primeiro Conteúdo</span>
+          <h3>O que abre portas</h3>
+          <p>O post que faz o cliente certo parar no seu perfil e pensar: "essa pessoa fala pra mim." Atrai sem forçar.</p>
+        </div>
+      </div>
+      <div class="c-row reveal">
+        <span class="c-num">02</span>
+        <div class="c-body">
+          <span class="c-tag">Segundo Conteúdo</span>
+          <h3>O que gera conexão</h3>
+          <p>Cria proximidade real. A pessoa para de te ver como fornecedor e começa a te ver como referência de confiança.</p>
+        </div>
+      </div>
+      <div class="c-row reveal">
+        <span class="c-num">03</span>
+        <div class="c-body">
+          <span class="c-tag">Terceiro Conteúdo</span>
+          <h3>O que constrói autoridade</h3>
+          <p>Mostra que você sabe o que faz, sem textão técnico que cansa. Posiciona sem precisar listar currículo.</p>
+        </div>
+      </div>
+      <div class="c-row reveal">
+        <span class="c-num">04</span>
+        <div class="c-body">
+          <span class="c-tag">Quarto Conteúdo</span>
+          <h3>O que quebra objeções</h3>
+          <p>Antecipa o "mas..." da cabeça do seu cliente antes que ele te mande no privado perguntando. Diminui fricção, aumenta conversão.</p>
+        </div>
+      </div>
+      <div class="c-row reveal">
+        <span class="c-num">05</span>
+        <div class="c-body">
+          <span class="c-tag">Quinto Conteúdo</span>
+          <h3>O que convida à ação</h3>
+          <p>O post que move. Não é "me chame no DM" no final de legenda. É estrutura que guia o cliente naturalmente até o próximo passo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ============ AUTORIDADE ============ -->
 <section class="section autoridade">
-<div class="container-sm">
-<span class="section-eyebrow">Quem vai te ensinar</span>
-<h2 class="section-title">Paula Zagotta</h2>
-<div class="autor-box">
-<div class="autor-avatar">PZ</div>
-<div class="autor-content">
-<h3>Paula Zagotta</h3>
-<span class="autor-label">Especialista em Conteúdo Estratégico para Prestadores de Serviço &mdash; Bras&iacute;lia/DF</span>
-<p>Paula trabalha com prestadores de serviço que sabem fazer um bom trabalho mas não conseguem comunicar isso de forma que traga clientes. Seu foco está em criar estrutura de conteúdo que gere resultado real &mdash; não apenas engajamento. É mentora no programa AMAV e desenvolveu o Framework dos 5 C's a partir da prática com seus alunos e clientes.</p>
-</div>
-</div>
-</div>
+  <div class="wrap wrap--narrow">
+    <div class="autor__grid">
+      <div class="autor__head reveal">
+        <span class="kicker">Quem vai te ensinar</span>
+        <h3>Paula Zagotta</h3>
+        <span class="autor__role">Especialista em Conteúdo Estratégico para Prestadores de Serviço · Brasília/DF</span>
+      </div>
+      <div class="autor__photo reveal">
+        <figure>
+          <div class="photo-frame">
+            <img
+              src="assets/paula-zagotta-authority-960.jpg"
+              srcset="assets/paula-zagotta-authority-960.jpg 960w, assets/paula-zagotta-authority-1600.jpg 1600w"
+              sizes="(min-width: 768px) 44vw, 90vw"
+              width="960"
+              height="1440"
+              alt="Retrato de Paula Zagotta"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="photo-cap">Paula Zagotta · Mentora AMAV</figcaption>
+        </figure>
+      </div>
+      <div class="autor__body reveal">
+        <p>Paula trabalha com prestadores de serviço que sabem fazer um bom trabalho mas não conseguem comunicar isso de forma que traga clientes. Seu foco está em criar estrutura de conteúdo que gere resultado real, não apenas engajamento. É mentora no programa AMAV e desenvolveu o Framework dos 5 C's a partir da prática com seus alunos e clientes.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<hr class="divider" />
+
+<hr class="rule" />
+
+<!-- ============ ENTREGÁVEIS ============ -->
 <section class="section conteudo">
-<div class="container">
-<span class="section-eyebrow">O que está dentro</span>
-<h2 class="section-title">Quatro entregáveis para você sair daqui e implementar hoje.</h2>
-<div class="entregavel-grid">
-<div class="entregavel-card">
-<div class="entregavel-icon">🎬</div>
-<h4>Masterclass Gravada</h4>
-<p>~1 hora de conteúdo direto ao ponto. Sem enrolação, sem teoria inútil. Você aprende o Framework dos 5 C's completo com exemplos reais do mercado de serviços.</p>
-<span class="entregavel-tag">Acesso imediato &middot; assista quando quiser</span>
-</div>
-<div class="entregavel-card">
-<div class="entregavel-icon">📖</div>
-<h4>Guia de Referências</h4>
-<p>Resumo visual de cada C com exemplos aplicados a diferentes nichos: saúde, jurídico, beleza, consultoria, design e mais. Ideal para consultar toda vez que for criar conteúdo.</p>
-<span class="entregavel-tag">PDF &middot; uso recorrente</span>
-</div>
-<div class="entregavel-card">
-<div class="entregavel-icon">📅</div>
-<h4>Planilha de Produção Semanal</h4>
-<p>Os 5 C's distribuídos nos 5 dias úteis da semana. Você abre na segunda, sabe exatamente o que postar cada dia e por quê aquele post vai naquele dia.</p>
-<span class="entregavel-tag">Planilha pronta para usar</span>
-</div>
-<div class="entregavel-card">
-<div class="entregavel-icon">🤖</div>
-<h4>Agente GPT Exclusivo</h4>
-<p>Um GPT configurado com o Framework dos 5 C's. Você descreve seu serviço e ele gera os 5 conteúdos da semana já no formato certo, com a estratégia embutida.</p>
-<span class="entregavel-tag">IA configurada pra você</span>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <span class="kicker reveal">O que está dentro</span>
+    <h2 class="title reveal">Quatro entregáveis para você sair daqui e implementar hoje.</h2>
+
+    <div class="entrega-list reveal">
+      <article class="entrega-item">
+        <div class="entrega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+        <div>
+          <h4>Masterclass Gravada</h4>
+          <p>Cerca de 1 hora de conteúdo direto ao ponto. Sem enrolação, sem teoria inútil. Você aprende o Framework dos 5 C's completo com exemplos reais do mercado de serviços.</p>
+          <span class="entrega-tag">Acesso imediato · assista quando quiser</span>
+        </div>
+      </article>
+      <article class="entrega-item">
+        <div class="entrega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div>
+          <h4>Guia de Referências</h4>
+          <p>Resumo visual de cada C com exemplos aplicados a diferentes nichos: saúde, jurídico, beleza, consultoria, design e mais. Ideal para consultar toda vez que for criar conteúdo.</p>
+          <span class="entrega-tag">PDF · uso recorrente</span>
+        </div>
+      </article>
+      <article class="entrega-item">
+        <div class="entrega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <h4>Planilha de Produção Semanal</h4>
+          <p>Os 5 C's distribuídos nos 5 dias úteis da semana. Você abre na segunda, sabe exatamente o que postar cada dia e por quê aquele post vai naquele dia.</p>
+          <span class="entrega-tag">Planilha pronta para usar</span>
+        </div>
+      </article>
+      <article class="entrega-item">
+        <div class="entrega-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2.5l1.7 4.6 4.6 1.7-4.6 1.7L11 15l-1.7-4.5L4.7 8.8l4.6-1.7z"/><path d="M18 14l.8 2.2 2.2.8-2.2.8L18 20l-.8-2.2-2.2-.8 2.2-.8z"/></svg></div>
+        <div>
+          <h4>Agente GPT Exclusivo</h4>
+          <p>Um GPT configurado com o Framework dos 5 C's. Você descreve seu serviço e ele gera os 5 conteúdos da semana já no formato certo, com a estratégia embutida.</p>
+          <span class="entrega-tag">IA configurada pra você</span>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
+
+<!-- ============ DADOS (prova) ============ -->
 <section class="section prova">
-<div class="container">
-<span class="section-eyebrow">Dados de mercado</span>
-<h2 class="section-title">O que os números dizem sobre conteúdo estratégico.</h2>
-<div class="stats-grid">
-<div class="stat-card">
-<div class="stat-number">3x</div>
-<div class="stat-label">mais leads gerados por empresas que usam conteúdo estratégico vs. conteúdo sem planejamento</div>
-<div class="stat-source">Fonte: Content Marketing Institute</div>
-</div>
-<div class="stat-card">
-<div class="stat-number">70%</div>
-<div class="stat-label">dos consumidores preferem conhecer uma empresa por conteúdo do que por anúncio direto</div>
-<div class="stat-source">Fonte: Demand Metric</div>
-</div>
-<div class="stat-card">
-<div class="stat-number">6x</div>
-<div class="stat-label">maior taxa de conversão em marcas pessoais que publicam com consistência e estrutura definida</div>
-<div class="stat-source">Fonte: Aberdeen Group</div>
-</div>
-</div>
-<div class="depo-placeholder">
-<p>Em breve: depoimentos de alunos que aplicaram o Framework dos 5 C's.</p>
-</div>
-</div>
+  <div class="wrap">
+    <span class="kicker reveal">Dados de mercado</span>
+    <h2 class="title reveal">O que os números dizem sobre conteúdo estratégico.</h2>
+
+    <div class="stats-grid reveal">
+      <div class="stat">
+        <span class="stat__num">3x</span>
+        <span class="stat__label">mais leads gerados por empresas que usam conteúdo estratégico vs. conteúdo sem planejamento</span>
+        <span class="stat__src">Fonte: Content Marketing Institute</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">70%</span>
+        <span class="stat__label">dos consumidores preferem conhecer uma empresa por conteúdo do que por anúncio direto</span>
+        <span class="stat__src">Fonte: Demand Metric</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">6x</span>
+        <span class="stat__label">maior taxa de conversão em marcas pessoais que publicam com consistência e estrutura definida</span>
+        <span class="stat__src">Fonte: Aberdeen Group</span>
+      </div>
+    </div>
+
+    <div class="depo reveal">Em breve: depoimentos de alunos que aplicaram o Framework dos 5 C's.</div>
+  </div>
 </section>
+
+<!-- ============ PARA QUEM ============ -->
 <section class="section paraquem">
-<div class="container-sm">
-<span class="section-eyebrow">Para quem é</span>
-<h2 class="section-title">Você vai se identificar em pelo menos 3 desses pontos.</h2>
-<ul class="check-list">
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você é prestador de serviço: nutricionista, dentista, coach, consultor, arquiteto, designer, copywriter, gestor de tráfego ou assistente virtual.
-</li>
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você já posta nas redes mas não consegue conectar o conteúdo com a chegada de novos clientes.
-</li>
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você usou (ou usa) ChatGPT para criar conteúdo, mas o resultado parece genérico e não representa você de verdade.
-</li>
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você vê concorrentes menos experientes que você ganhando mais destaque nas redes e isso te incomoda.
-</li>
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você quer uma estrutura simples, que dê para seguir toda semana sem precisar virar especialista em marketing.
-</li>
-<li>
-<span class="check-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-</span>
-Você acredita que já tentou antes e não funcionou &mdash; mas está aberto à possibilidade de que o problema era falta de estratégia, não falta de esforço.
-</li>
-</ul>
-</div>
+  <div class="wrap wrap--narrow">
+    <span class="kicker reveal">Para quem é</span>
+    <h2 class="title reveal">Você vai se identificar em pelo menos 3 desses pontos.</h2>
+
+    <ul class="check-list reveal">
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você é prestador de serviço: nutricionista, dentista, coach, consultor, arquiteto, designer, copywriter, gestor de tráfego ou assistente virtual.</li>
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você já posta nas redes mas não consegue conectar o conteúdo com a chegada de novos clientes.</li>
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você usou (ou usa) ChatGPT para criar conteúdo, mas o resultado parece genérico e não representa você de verdade.</li>
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você vê concorrentes menos experientes que você ganhando mais destaque nas redes e isso te incomoda.</li>
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você quer uma estrutura simples, que dê para seguir toda semana sem precisar virar especialista em marketing.</li>
+      <li><span class="check-ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>Você acredita que já tentou antes e não funcionou, mas está aberto à possibilidade de que o problema era falta de estratégia, não falta de esforço.</li>
+    </ul>
+  </div>
 </section>
+
+<!-- ============ OFERTA ============ -->
 <section class="section oferta">
-<div class="container-sm">
-<span class="section-eyebrow">A oferta</span>
-<h2 class="section-title">Tudo que você precisa para começar hoje.</h2>
-<div class="oferta-box">
-<h3>O que está incluso</h3>
-<table class="value-table">
-<tbody>
-<tr>
-<td>Masterclass &mdash; Framework dos 5 C's (~1h)</td>
-<td>R$&nbsp;97</td>
-</tr>
-<tr>
-<td>Guia de Refer&ecirc;ncias com exemplos por nicho</td>
-<td>R$&nbsp;47</td>
-</tr>
-<tr>
-<td>Planilha de Produ&ccedil;&atilde;o Semanal</td>
-<td>R$&nbsp;27</td>
-</tr>
-<tr>
-<td>Agente GPT Exclusivo dos 5 C's</td>
-<td>R$&nbsp;47</td>
-</tr>
-<tr class="total-row">
-<td>Valor total</td>
-<td>R$&nbsp;218</td>
-</tr>
-</tbody>
-</table>
-<div class="oferta-price-block">
-<p class="oferta-label">Seu investimento hoje</p>
-<div class="oferta-price">R$&nbsp;47</div>
-<p class="oferta-installment">Pagamento &uacute;nico &middot; Sem mensalidade &middot; Acesso imediato</p>
-</div>
-<a href="TODO-LINK-CHECKOUT" class="oferta-cta" data-checkout="true" target="_blank" rel="noopener">
-Quero meu acesso por R$&nbsp;47 &rarr;
-</a>
-<br />
-<div class="garantia-badge">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-Garantia incondicional de 7 dias. Se n&atilde;o gostar, devolvemos 100% do seu dinheiro.
-</div>
-</div>
-</div>
+  <div class="wrap wrap--narrow">
+    <span class="kicker reveal" style="justify-content:center;">A oferta</span>
+    <h2 class="title reveal" style="text-align:center;">Tudo que você precisa para começar hoje.</h2>
+
+    <div class="oferta__box reveal">
+      <h3>O que está incluso</h3>
+      <table class="value-table">
+        <tbody>
+          <tr><td>Masterclass · Framework dos 5 C's (~1h)</td><td>R$&nbsp;97</td></tr>
+          <tr><td>Guia de Referências com exemplos por nicho</td><td>R$&nbsp;47</td></tr>
+          <tr><td>Planilha de Produção Semanal</td><td>R$&nbsp;27</td></tr>
+          <tr><td>Agente GPT Exclusivo dos 5 C's</td><td>R$&nbsp;47</td></tr>
+          <tr class="total"><td>Valor total</td><td>R$&nbsp;218</td></tr>
+        </tbody>
+      </table>
+
+      <div class="offer-price">
+        <span class="cap">Seu investimento hoje</span>
+        <span class="val">R$&nbsp;47</span>
+        <span class="note">Pagamento único · Sem mensalidade · Acesso imediato</span>
+      </div>
+
+      <a href="TODO-LINK-CHECKOUT" class="btn btn--block" data-checkout="true" target="_blank" rel="noopener">
+        Garantir minha vaga por R$&nbsp;47 <span class="arrow">&rarr;</span>
+      </a>
+
+      <div class="garantia">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Garantia incondicional de 7 dias. Se não gostar, devolvemos 100% do seu dinheiro.
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ============ FAQ ============ -->
 <section class="section faq">
-<div class="container-sm">
-<span class="section-eyebrow">Perguntas frequentes</span>
-<h2 class="section-title">Tira suas d&uacute;vidas antes de entrar.</h2>
-<div class="faq-list">
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-Preciso saber usar ChatGPT para aproveitar a masterclass?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-N&atilde;o. A masterclass ensina o racioc&iacute;nio estrat&eacute;gico por tr&aacute;s de cada tipo de conte&uacute;do. O Agente GPT que vem incluso j&aacute; est&aacute; configurado com o framework &mdash; voc&ecirc; s&oacute; precisa descrever o seu servi&ccedil;o e ele gera. Se voc&ecirc; souber digitar, voc&ecirc; consegue usar.
-</div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-Funciona pro meu nicho?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Se voc&ecirc; &eacute; prestador de servi&ccedil;o e usa redes sociais para atrair clientes, funciona. O Framework dos 5 C's foi desenvolvido especificamente para profissionais que vendem servi&ccedil;o: sa&uacute;de, jur&iacute;dico, est&eacute;tica, consultoria, design, marketing, educa&ccedil;&atilde;o e mais. O Guia de Refer&ecirc;ncias traz exemplos de v&aacute;rios nichos para facilitar a aplica&ccedil;&atilde;o.
-</div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-J&aacute; tentei outros cursos e n&atilde;o funcionou. Por que seria diferente?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-A maioria dos cursos de conte&uacute;do ensina t&eacute;cnicas de edi&ccedil;&atilde;o, est&eacute;tica do feed ou truques de algoritmo. Nenhum desses fatores gera venda de forma consistente. O que falta &eacute; estrutura estrat&eacute;gica &mdash; saber qual tipo de post cumpre qual papel na jornada do cliente. &Eacute; exatamente isso que este framework resolve. E se n&atilde;o funcionar pra voc&ecirc;, tem garantia de 7 dias sem perguntas.
-</div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-Em quanto tempo vejo resultado?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-N&atilde;o existe garantia de prazo &mdash; isso depende do seu nicho, do seu p&uacute;blico e da sua consist&ecirc;ncia. O que podemos dizer &eacute;: quem aplica o framework completo por 4 semanas seguidas &mdash; os 5 C's toda semana &mdash; come&ccedil;a a ver mudan&ccedil;a na qualidade das intera&ccedil;&otilde;es e no perfil de quem manda mensagem. A venda &eacute; consequ&ecirc;ncia da autoridade constru&iacute;da.
-</div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-Tem mensalidade ou &eacute; pagamento &uacute;nico?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Pagamento &uacute;nico de R$&nbsp;47. Sem assinatura, sem mensalidade. Voc&ecirc; paga uma vez e tem acesso &agrave; masterclass, ao guia, &agrave; planilha e ao Agente GPT sem limite de tempo.
-</div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" aria-expanded="false">
-Como funciona a garantia?
-<span class="faq-icon">
-<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-</span>
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner">
-Voc&ecirc; tem 7 dias a partir da compra para assistir, testar e decidir. Se por qualquer motivo n&atilde;o gostar, basta solicitar reembolso direto pela Hotmart e o valor &eacute; devolvido integralmente. Sem burocracia, sem perguntas.
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="wrap wrap--narrow">
+    <span class="kicker reveal">Perguntas frequentes</span>
+    <h2 class="title reveal">Tira suas dúvidas antes de entrar.</h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Preciso saber usar ChatGPT para aproveitar a masterclass?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">Não. A masterclass ensina o raciocínio estratégico por trás de cada tipo de conteúdo. O Agente GPT que vem incluso já está configurado com o framework: você só precisa descrever o seu serviço e ele gera. Se você souber digitar, você consegue usar.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Funciona pro meu nicho?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">Se você é prestador de serviço e usa redes sociais para atrair clientes, funciona. O Framework dos 5 C's foi desenvolvido especificamente para profissionais que vendem serviço: saúde, jurídico, estética, consultoria, design, marketing, educação e mais. O Guia de Referências traz exemplos de vários nichos para facilitar a aplicação.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Já tentei outros cursos e não funcionou. Por que seria diferente?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">A maioria dos cursos de conteúdo ensina técnicas de edição, estética do feed ou truques de algoritmo. Nenhum desses fatores gera venda de forma consistente. O que falta é estrutura estratégica: saber qual tipo de post cumpre qual papel na jornada do cliente. É exatamente isso que este framework resolve. E se não funcionar pra você, tem garantia de 7 dias sem perguntas.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Em quanto tempo vejo resultado?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">Não existe garantia de prazo, isso depende do seu nicho, do seu público e da sua consistência. O que podemos dizer é: quem aplica o framework completo por 4 semanas seguidas (os 5 C's toda semana) começa a ver mudança na qualidade das interações e no perfil de quem manda mensagem. A venda é consequência da autoridade construída.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Tem mensalidade ou é pagamento único?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">Pagamento único de R$&nbsp;47. Sem assinatura, sem mensalidade. Você paga uma vez e tem acesso à masterclass, ao guia, à planilha e ao Agente GPT sem limite de tempo.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como funciona a garantia?<span class="faq-ico" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a__inner">Você tem 7 dias a partir da compra para assistir, testar e decidir. Se por qualquer motivo não gostar, basta solicitar reembolso direto pela Hotmart e o valor é devolvido integralmente. Sem burocracia, sem perguntas.</div></div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="final-cta">
-<div class="container-sm" style="text-align:center;">
-<span class="section-eyebrow">Sua decis&atilde;o</span>
-<h2>Ou voc&ecirc; continua postando sem retorno, ou voc&ecirc; <em>aprende o que faz a diferença.</em></h2>
-<p class="section-body">R$&nbsp;47. Uma hora. Um framework que voc&ecirc; usa toda semana pelo resto da sua carreira.</p>
-<a href="TODO-LINK-CHECKOUT" class="cta-btn" data-checkout="true" target="_blank" rel="noopener">
-Quero meu acesso por R$&nbsp;47 &rarr;
-</a>
-<div class="trust-signals">
-<div class="trust-item">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-Garantia de 7 dias
-</div>
-<div class="trust-item">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-Pagamento seguro via Hotmart
-</div>
-<div class="trust-item">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-Acesso imediato ap&oacute;s compra
-</div>
-</div>
-</div>
+
+<!-- ============ FECHO (CTA final) ============ -->
+<section class="fecho">
+  <div class="wrap wrap--narrow">
+    <span class="kicker reveal" style="justify-content:center;">Sua decisão</span>
+    <h2>Ou você continua postando sem retorno, ou <em>aprende o que faz a diferença.</em></h2>
+    <p class="lead reveal">R$&nbsp;47. Uma hora. Um framework que você usa toda semana pelo resto da sua carreira.</p>
+
+    <a href="TODO-LINK-CHECKOUT" class="btn" data-checkout="true" target="_blank" rel="noopener">
+      Começar por R$&nbsp;47 hoje <span class="arrow">&rarr;</span>
+    </a>
+
+    <div class="trust">
+      <span class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Garantia de 7 dias</span>
+      <span class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pagamento seguro via Hotmart</span>
+      <span class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Acesso imediato após compra</span>
+    </div>
+  </div>
 </section>
+
+<!-- ============ FOOTER ============ -->
 <footer>
-<p>
-&copy; Paula Zagotta &middot; Todos os direitos reservados &middot;
-Feito por <a href="https://wa.me/5521991097451" target="_blank" rel="noopener">Franca Marketing</a>
-</p>
+  <p>
+    &copy; Paula Zagotta · Todos os direitos reservados<br />
+    Feito por <a href="https://wa.me/5521991097451?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Paula%20Zagotta%20e%20gostaria%20de%20falar%20com%20a%20Franca%20Marketing." target="_blank" rel="noopener">Franca Marketing</a>
+  </p>
 </footer>
-<script>
-document.querySelectorAll('.faq-question').forEach(function(btn) {
-btn.addEventListener('click', function() {
-var item = this.closest('.faq-item');
-var isOpen = item.classList.contains('open');
-document.querySelectorAll('.faq-item').forEach(function(i) {
-i.classList.remove('open');
-i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-});
-if (!isOpen) {
-item.classList.add('open');
-this.setAttribute('aria-expanded', 'true');
-}
-});
-});
-</script>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

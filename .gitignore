@@ -1,0 +1,6 @@
+# Configs locais de ferramentas (não versionar)
+.claude/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
