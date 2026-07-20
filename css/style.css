@@ -1054,3 +1054,100 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
   }
   .c-row { grid-template-columns: 180px 1fr; gap: 4px 48px; }
 }
+
+/* ------------------------------------------------------------
+   VIRADA — Jornada Steps + Callout
+   ------------------------------------------------------------ */
+.jornada-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 520px;
+  margin: 36px auto 0;
+}
+.jornada-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  transition: background var(--t);
+}
+.jornada-step:first-child {
+  border-top: 1px solid var(--line);
+}
+.jornada-step:hover {
+  background: rgba(232,164,74,0.04);
+}
+.jornada-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.jornada-txt {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.virada-callout {
+  max-width: 620px;
+  margin: 40px auto 0;
+  padding: 28px 28px;
+  background: var(--paper-2);
+  border: 1px solid rgba(232,164,74,0.20);
+  border-radius: var(--r-lg);
+  position: relative;
+  text-align: left;
+}
+.virada-callout::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.virada-callout__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.virada-callout__header svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.virada-callout p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.virada-callout em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+@media (min-width: 640px) {
+  .jornada-steps {
+    max-width: 560px;
+  }
+  .jornada-step {
+    padding: 16px 24px;
+  }
+}
