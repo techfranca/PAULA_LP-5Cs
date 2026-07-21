@@ -508,7 +508,7 @@ a { color: inherit; }
    ------------------------------------------------------------ */
 .metodo { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-.cs-list { margin-top: 32px; }
+.cs-list { margin-top: 44px; }
 
 .c-row {
   display: grid;
