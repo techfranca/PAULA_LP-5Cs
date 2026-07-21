@@ -1312,3 +1312,105 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     padding: 32px 28px;
   }
 }
+
+/* ------------------------------------------------------------
+   PARA QUEM — Two-column Yes/No grid
+   ------------------------------------------------------------ */
+.pq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.pq-col {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.pq-col--yes {
+  background: var(--paper-3);
+  border: 1px solid rgba(74,222,128,0.18);
+}
+.pq-col--no {
+  background: var(--paper-3);
+  border: 1px solid rgba(244,115,107,0.18);
+}
+.pq-col__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+}
+.pq-col__header--yes {
+  background: rgba(74,222,128,0.06);
+  border-bottom: 1px solid rgba(74,222,128,0.12);
+}
+.pq-col__header--no {
+  background: rgba(244,115,107,0.06);
+  border-bottom: 1px solid rgba(244,115,107,0.12);
+}
+.pq-col__header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.pq-col__badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pq-col__badge--yes {
+  background: rgba(74,222,128,0.15);
+  color: var(--green);
+}
+.pq-col__badge--no {
+  background: rgba(244,115,107,0.15);
+  color: var(--red);
+}
+.pq-col ul {
+  list-style: none;
+  padding: 8px 22px 18px;
+}
+.pq-col li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.pq-col li:last-child {
+  border-bottom: 0;
+}
+.pq-ico {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.pq-ico--yes {
+  background: rgba(74,222,128,0.12);
+  border: 1.5px solid rgba(74,222,128,0.35);
+  color: var(--green);
+}
+.pq-ico--no {
+  background: rgba(244,115,107,0.10);
+  border: 1.5px solid rgba(244,115,107,0.30);
+  color: var(--red);
+}
+
+@media (min-width: 640px) {
+  .pq-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
