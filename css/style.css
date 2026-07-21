@@ -1232,3 +1232,83 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     padding: 28px 26px;
   }
 }
+
+/* ------------------------------------------------------------
+   ENTREGÁVEIS — Kit Cards
+   ------------------------------------------------------------ */
+.kit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 32px;
+}
+.kit-card {
+  background: var(--paper-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  text-align: center;
+  position: relative;
+  transition: border-color var(--t), transform var(--t);
+}
+.kit-card:hover {
+  border-color: rgba(232,164,74,0.30);
+  transform: translateY(-2px);
+}
+.kit-card__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold-wash);
+  border: 1px solid rgba(232,164,74,0.25);
+  color: var(--gold);
+}
+.kit-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.kit-card__tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 3px 10px;
+  border: 1px solid rgba(232,164,74,0.25);
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+.kit-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.kit-card p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .kit-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+
+@media (min-width: 960px) {
+  .kit-grid {
+    gap: 16px;
+  }
+  .kit-card {
+    padding: 32px 28px;
+  }
+}
