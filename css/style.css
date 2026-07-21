@@ -1151,3 +1151,84 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     padding: 16px 24px;
   }
 }
+
+/* ------------------------------------------------------------
+   MÉTODO — Cards grid
+   ------------------------------------------------------------ */
+.metodo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 32px;
+}
+.metodo-card {
+  background: var(--paper-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 24px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--t), transform var(--t);
+}
+.metodo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+.metodo-card:hover {
+  border-color: rgba(232,164,74,0.30);
+  transform: translateY(-2px);
+}
+.metodo-card:hover::before {
+  opacity: 1;
+}
+.metodo-card__num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border: 1px solid rgba(232,164,74,0.30);
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.metodo-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.metodo-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 640px) {
+  .metodo-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .metodo-card--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 960px) {
+  .metodo-grid {
+    gap: 16px;
+  }
+  .metodo-card {
+    padding: 28px 26px;
+  }
+}
