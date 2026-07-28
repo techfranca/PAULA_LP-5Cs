@@ -1983,3 +1983,210 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     border-radius: 20px;
   }
 }
+
+/* ── Oferta v2 — Stack de valor com impacto ── */
+
+/* Stack items */
+.stack {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background .2s;
+}
+
+.stack-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.stack-item__info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.stack-item__icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(232,164,74,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.stack-item__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.stack-item__name {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.stack-item__price {
+  flex-shrink: 0;
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* Total riscado */
+.stack-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 0;
+  margin-top: 4px;
+}
+
+.stack-total__label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.stack-total__val {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--red, #ef4444);
+  text-decoration: line-through;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: var(--red, #ef4444);
+  letter-spacing: -0.03em;
+}
+
+/* Hero do preço */
+.offer-hero {
+  position: relative;
+  margin-bottom: 28px;
+  padding: 32px 24px 28px;
+  background: linear-gradient(145deg, rgba(74,222,128,0.06), rgba(74,222,128,0.02));
+  border: 2px solid rgba(74,222,128,0.25);
+  border-radius: 24px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.offer-hero::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--green, #4ade80), transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+.offer-hero__cap {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+
+.offer-hero__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.offer-hero__old {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--ink-mute);
+  text-decoration: line-through;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: var(--red, #ef4444);
+  opacity: 0.6;
+  letter-spacing: -0.04em;
+}
+
+.offer-hero__new {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: clamp(3.5rem, 12vw, 5.5rem);
+  font-weight: 800;
+  color: var(--green, #4ade80);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0 40px rgba(74,222,128,0.2);
+}
+
+.offer-hero__savings {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: rgba(74,222,128,0.12);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green, #4ade80);
+  margin-bottom: 12px;
+}
+
+.offer-hero__note {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-top: 4px;
+}
+
+/* Animação sutil no preço */
+@keyframes priceGlow {
+  0%, 100% { text-shadow: 0 0 40px rgba(74,222,128,0.15); }
+  50% { text-shadow: 0 0 60px rgba(74,222,128,0.3); }
+}
+
+.offer-hero__new {
+  animation: priceGlow 3s ease-in-out infinite;
+}
+
+/* Mobile polish */
+@media (max-width: 480px) {
+  .stack-item__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  .stack-item__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .stack-item__name {
+    font-size: 13.5px;
+  }
+  .offer-hero {
+    padding: 28px 18px 24px;
+  }
+  .offer-hero__row {
+    gap: 14px;
+  }
+  .offer-hero__old {
+    font-size: 1.3rem;
+  }
+}
