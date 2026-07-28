@@ -2301,3 +2301,18 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     font-size: 1.3rem;
   }
 }
+
+/* ── Gap global reduzido ── */
+.section.section { padding: 36px 0; }
+.fecho.fecho { padding: 36px 0; }
+.hero.hero { padding-bottom: 24px; }
+hr.rule { margin: 0; }
+
+@media (min-width: 640px) {
+  .section.section { padding: 44px 0; }
+  .fecho.fecho { padding: 44px 0; }
+}
+@media (min-width: 960px) {
+  .section.section { padding: 52px 0; }
+  .fecho.fecho { padding: 52px 0; }
+}
