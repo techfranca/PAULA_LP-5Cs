@@ -2190,3 +2190,114 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     font-size: 1.3rem;
   }
 }
+
+/* ── Oferta compacta ── */
+.stack-compact {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.stack-compact li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.35;
+}
+
+.stack-compact li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.sc-price {
+  flex-shrink: 0;
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* De → Por */
+.offer-compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 22px 16px;
+  background: var(--paper-3);
+  border: 1.5px solid rgba(74,222,128,0.25);
+  border-radius: 20px;
+}
+
+.offer-compact__de,
+.offer-compact__por {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.offer-compact__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.offer-compact__old {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+  color: var(--ink-mute);
+  text-decoration: line-through;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: var(--red, #ef4444);
+  opacity: 0.55;
+  letter-spacing: -0.04em;
+}
+
+.offer-compact__arrow {
+  color: var(--green, #4ade80);
+  flex-shrink: 0;
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.5; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
+}
+
+.offer-compact__new {
+  font-family: var(--font-display, 'Sora', sans-serif);
+  font-size: clamp(2.8rem, 10vw, 4rem);
+  font-weight: 800;
+  color: var(--green, #4ade80);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  animation: priceGlow 3s ease-in-out infinite;
+}
+
+.offer-meta {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-mute);
+  margin: 12px 0 0;
+}
+
+@media (max-width: 420px) {
+  .offer-compact {
+    gap: 10px;
+    padding: 18px 12px;
+  }
+  .offer-compact__old {
+    font-size: 1.3rem;
+  }
+}
