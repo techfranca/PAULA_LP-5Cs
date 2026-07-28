@@ -2337,3 +2337,12 @@ hr.rule { margin: 0; }
 .metodo .mark__line {
   display: none;
 }
+
+/* ── Preços individuais riscados em vermelho na oferta ── */
+.sc-price {
+  color: var(--red, #ef4444) !important;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--red, #ef4444);
+  opacity: 0.75;
+}
