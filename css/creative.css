@@ -27,9 +27,7 @@ body {
   padding-inline: 24px;
 }
 
-.section {
-  padding: 88px 0;
-}
+.section { padding: 52px 0; }
 
 .rule {
   opacity: 0.55;
@@ -96,7 +94,7 @@ body {
    HERO — capa de campanha + retrato em arco
    ============================================================ */
 .hero {
-  padding: 50px 0 76px;
+  padding: 40px 0 56px;
   text-align: left;
 }
 
@@ -818,7 +816,7 @@ body {
    ============================================================ */
 .fecho {
   position: relative;
-  padding: 104px 0;
+  padding: 56px 0;
   overflow: hidden;
   isolation: isolate;
 }
@@ -865,9 +863,7 @@ footer {
     padding-inline: 32px;
   }
 
-  .section {
-    padding: 104px 0;
-  }
+  .section { padding: 64px 0; }
 
   .hero__actions {
     flex-direction: row;
@@ -910,7 +906,7 @@ footer {
 
 @media (min-width: 860px) {
   .hero {
-    padding: 74px 0 86px;
+    padding: 56px 0 64px;
   }
 
   .hero .wrap {
