@@ -2326,3 +2326,14 @@ hr.rule { margin: 0; }
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* ── Sublinhado forte no .mark do método ── */
+.metodo .mark {
+  text-decoration: underline;
+  text-decoration-color: var(--gold, #e8a44a);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+.metodo .mark__line {
+  display: none;
+}
