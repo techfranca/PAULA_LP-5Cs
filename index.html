@@ -402,20 +402,57 @@
 
     <div class="oferta__box reveal">
       <h3>Seu acesso ao Cliente Toda Semana</h3>
-      <table class="value-table">
-        <tbody>
-          <tr><td>Masterclass &middot; Framework dos 5 C&rsquo;s (~1h)</td><td>R$&nbsp;97</td></tr>
-          <tr><td>Guia de Refer&ecirc;ncias com exemplos por nicho</td><td>R$&nbsp;47</td></tr>
-          <tr><td>Planilha de Produ&ccedil;&atilde;o Semanal</td><td>R$&nbsp;27</td></tr>
-          <tr><td>Copiloto 5Cs</td><td>R$&nbsp;67</td></tr>
-          <tr class="total"><td>Valor total</td><td>R$&nbsp;197</td></tr>
-        </tbody>
-      </table>
 
-      <div class="offer-price">
-        <span class="cap">Seu investimento hoje</span>
-        <span class="val">R$&nbsp;47</span>
-        <span class="note">Pagamento &uacute;nico &middot; Sem mensalidade &middot; Acesso imediato</span>
+      <!-- Stack de valor -->
+      <div class="stack">
+        <div class="stack-item">
+          <div class="stack-item__info">
+            <span class="stack-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <span class="stack-item__name">Masterclass &middot; Framework dos 5 C&rsquo;s (~1h)</span>
+          </div>
+          <span class="stack-item__price">R$&nbsp;97</span>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item__info">
+            <span class="stack-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <span class="stack-item__name">Guia de Refer&ecirc;ncias com exemplos por nicho</span>
+          </div>
+          <span class="stack-item__price">R$&nbsp;47</span>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item__info">
+            <span class="stack-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+            <span class="stack-item__name">Planilha de Produ&ccedil;&atilde;o Semanal</span>
+          </div>
+          <span class="stack-item__price">R$&nbsp;27</span>
+        </div>
+        <div class="stack-item">
+          <div class="stack-item__info">
+            <span class="stack-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><path d="M8.56 13a8 8 0 0 0-2.3 3.5"/><path d="M15.44 13a8 8 0 0 1 2.3 3.5"/></svg></span>
+            <span class="stack-item__name">Copiloto 5Cs &mdash; IA estrat&eacute;gica</span>
+          </div>
+          <span class="stack-item__price">R$&nbsp;67</span>
+        </div>
+
+        <!-- Total riscado -->
+        <div class="stack-total">
+          <span class="stack-total__label">Valor real de tudo</span>
+          <span class="stack-total__val">R$&nbsp;197</span>
+        </div>
+      </div>
+
+      <!-- Preço com destaque -->
+      <div class="offer-hero">
+        <span class="offer-hero__cap">Seu investimento hoje</span>
+        <div class="offer-hero__row">
+          <span class="offer-hero__old">R$&nbsp;197</span>
+          <span class="offer-hero__new">R$&nbsp;47</span>
+        </div>
+        <div class="offer-hero__savings">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Voc&ecirc; economiza R$&nbsp;150
+        </div>
+        <span class="offer-hero__note">Pagamento &uacute;nico &middot; Sem mensalidade &middot; Acesso imediato</span>
       </div>
 
       <a href="TODO-LINK-CHECKOUT" class="btn btn--block" data-checkout="true" target="_blank" rel="noopener">
