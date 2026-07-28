@@ -1414,3 +1414,88 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ------------------------------------------------------------
+   MÉTODO — Duo boxes (Estratégia + Execução)
+   ------------------------------------------------------------ */
+.metodo-duo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.metodo-box {
+  background: var(--paper-3);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.metodo-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.metodo-box--strategy {
+  border: 1px solid rgba(232,164,74,0.20);
+}
+.metodo-box--strategy::before {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+.metodo-box--exec {
+  border: 1px solid rgba(99,102,241,0.20);
+}
+.metodo-box--exec::before {
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+}
+.metodo-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.metodo-box--strategy h3 {
+  color: var(--gold);
+}
+.metodo-box--exec h3 {
+  color: #818cf8;
+}
+.metodo-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.metodo-box li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.metodo-box li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+.metodo-box--strategy li::before {
+  background: var(--gold);
+}
+.metodo-box--exec li::before {
+  background: #818cf8;
+}
+
+@media (min-width: 640px) {
+  .metodo-duo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
