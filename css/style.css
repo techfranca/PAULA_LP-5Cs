@@ -2316,3 +2316,13 @@ hr.rule { margin: 0; }
   .section.section { padding: 52px 0; }
   .fecho.fecho { padding: 52px 0; }
 }
+
+/* ── Highlight amarelo (marca-texto) ── */
+.highlight {
+  background: var(--gold, #e8a44a);
+  color: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
