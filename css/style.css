@@ -1512,3 +1512,23 @@ footer a:hover { color: var(--gold-light); text-decoration: underline; }
 @media (min-width: 960px) {
   .rule + .problema { padding-top: 28px; }
 }
+
+/* ── Badge garantia no hero ── */
+.hero__garantia {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--accent, #e8a44a);
+  border: 1.5px solid var(--accent, #e8a44a);
+  border-radius: 999px;
+  opacity: .9;
+}
+.hero__garantia svg {
+  flex-shrink: 0;
+  stroke: var(--accent, #e8a44a);
+}
